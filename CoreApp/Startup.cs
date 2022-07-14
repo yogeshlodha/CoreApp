@@ -36,6 +36,10 @@ namespace CoreApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            else if (env.IsStaging())
+            {
+                app.UseExceptionHandler("/Error");
+            }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
